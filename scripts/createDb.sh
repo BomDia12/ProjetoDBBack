@@ -1,5 +1,11 @@
 #!/bin/bash
 read -p "Escreva o nome do seu usuário postgresql: " user
-read -p "Escreva a senha do seu usuário postgresql: " pass
 
+# criando o banco de dados
+psql postgres $user -c "CREATE DATABASE projetodb;"
 
+# criando a estrutura
+psql projetodb $user < ./sql/schema.sql
+
+# populando o banco
+psql projetodb $user < ./sql/seed.sql

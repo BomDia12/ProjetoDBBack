@@ -1,35 +1,35 @@
 CREATE TABLE "Estudantes" (
   "id" uuid PRIMARY KEY NOT NULL,
-  "email" string UNIQUE NOT NULL,
-  "nome" string,
-  "senha" string NOT NULL,
-  "curso" string
+  "email" varchar UNIQUE NOT NULL,
+  "nome" varchar,
+  "senha" varchar NOT NULL,
+  "curso" varchar
 );
 
 CREATE TABLE "Departamento" (
   "id" uuid PRIMARY KEY NOT NULL,
-  "nome" string
+  "nome" varchar
 );
 
 CREATE TABLE "Professores" (
   "id" uuid PRIMARY KEY NOT NULL,
-  "email" string,
-  "nome" string,
+  "email" varchar,
+  "nome" varchar,
   "id_departamento" uuid NOT NULL
 );
 
 CREATE TABLE "Disciplinas" (
   "id" uuid PRIMARY KEY NOT NULL,
-  "name" string,
+  "name" varchar,
   "id_departamento" uuid NOT NULL,
-  "codigo" string
+  "codigo" varchar
 );
 
 CREATE TABLE "Turma" (
   "id" uuid PRIMARY KEY NOT NULL,
   "id_professor" uuid NOT NULL,
   "id_disciplina" uuid NOT NULL,
-  "codigo" string
+  "codigo" varchar
 );
 
 CREATE TABLE "Avaliacoes" (
@@ -37,7 +37,7 @@ CREATE TABLE "Avaliacoes" (
   "id_estudante" uuid NOT NULL,
   "id_turma" uuid NOT NULL,
   "nota" int NOT NULL,
-  "descricao" string
+  "descricao" varchar
 );
 
 CREATE TABLE "Denuncias" (

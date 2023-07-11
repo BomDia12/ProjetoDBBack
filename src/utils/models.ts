@@ -5,3 +5,8 @@ export interface Student {
     senha?: string;
     curso?: string;
 }
+
+export interface Department {
+    id?: string;
+    nome?: string;
+}

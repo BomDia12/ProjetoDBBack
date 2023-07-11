@@ -19,7 +19,7 @@ INSERT INTO Professores VALUES (
 );
 
 INSERT INTO Disciplinas VALUES (
-  'ddcb1260-1a97-4e07-b7b4-b08f41a84473'
+  'ddcb1260-1a97-4e07-b7b4-b08f41a84473',
   'Banco de Dados',
   '06924270-154e-438c-84af-c49e054114b6',
   'CIC0097'

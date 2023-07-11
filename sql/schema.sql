@@ -62,4 +62,4 @@ ALTER TABLE Denuncias ADD FOREIGN KEY (id_estudante) REFERENCES Estudantes (id);
 
 ALTER TABLE Denuncias ADD FOREIGN KEY (id_avaliacao) REFERENCES Avaliacoes (id);
 
-ALTER TABLE Turma ADD FOREIGN KEY (id_disciplina) REFERENCES Turma (id);
+ALTER TABLE Turma ADD FOREIGN KEY (id_disciplina) REFERENCES Disciplinas (id);

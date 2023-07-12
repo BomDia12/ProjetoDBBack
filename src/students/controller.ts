@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { createStudentService, deleteStudentService, fetchAllStudents, fetchStudentById } from "./service"
+import { createStudentService, deleteStudentService, fetchAllStudents, fetchStudentById, updateStudent } from "./service"
 import { Student } from "src/utils/models";
 
 export const getAllStudents = (req: Request, res: Response) => {
@@ -47,6 +47,16 @@ export const deleteStudentRequest = (req: Request, res: Response) => {
 
     deleteStudentService(id).then(data => {
         res.status(200).send();
+    }).catch(() => {
+        res.status(404).send();
+    });
+}
+
+export const putStudent = (req: Request, res: Response) => {
+    const body = req.body as Student;
+
+    updateStudent(body).then(data => {
+        res.status(200).send(data);
     }).catch(() => {
         res.status(404).send();
     });

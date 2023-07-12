@@ -6,7 +6,7 @@ INSERT INTO Estudantes VALUES (
   'Curso'
 );
 
-INSERT INTO Departamento VALUES (
+INSERT INTO Departamentos VALUES (
   '06924270-154e-438c-84af-c49e054114b6',
   'CIC - Departamento de Ciência de Computação'
 );
@@ -25,7 +25,7 @@ INSERT INTO Disciplinas VALUES (
   'CIC0097'
 );
 
-INSERT INTO Turma VALUES (
+INSERT INTO Turmas VALUES (
   'a4248ed4-5387-476f-bfd6-261a415089e7',
   '25b34522-788a-4b9d-a583-a9d9d5772527',
   'ddcb1260-1a97-4e07-b7b4-b08f41a84473',

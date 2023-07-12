@@ -1,5 +1,5 @@
 import { Student } from "src/utils/models";
-import { createStudent, deleteStudentData, fetchAllStudentsData, fetchStudentDataById } from "./repository"
+import { createStudent, deleteStudentData, fetchAllStudentsData, fetchStudentDataById, updateStudentData } from "./repository"
 import { v4 as uuid } from "uuid";
 
 export const fetchAllStudents = async () => {
@@ -21,4 +21,10 @@ export const createStudentService = async (student: Student) => {
 
 export const deleteStudentService = async (id: string) => {
     return await deleteStudentData(id);
+}
+
+export const updateStudent = async (student: Student) => {
+    await updateStudentData(student);
+
+    return await fetchStudentById(student.id);
 }

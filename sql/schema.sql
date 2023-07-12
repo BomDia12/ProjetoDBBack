@@ -6,7 +6,7 @@ CREATE TABLE Estudantes (
   curso varchar
 );
 
-CREATE TABLE Departamento (
+CREATE TABLE Departamentos (
   id uuid PRIMARY KEY NOT NULL,
   nome varchar
 );
@@ -20,12 +20,12 @@ CREATE TABLE Professores (
 
 CREATE TABLE Disciplinas (
   id uuid PRIMARY KEY NOT NULL,
-  name varchar,
+  nome varchar,
   id_departamento uuid NOT NULL,
   codigo varchar
 );
 
-CREATE TABLE Turma (
+CREATE TABLE Turmas (
   id uuid PRIMARY KEY NOT NULL,
   id_professor uuid NOT NULL,
   id_disciplina uuid NOT NULL,
@@ -46,15 +46,15 @@ CREATE TABLE Denuncias (
   id_estudante uuid NOT NULL
 );
 
-ALTER TABLE Professores ADD FOREIGN KEY (id_departamento) REFERENCES Departamento (id);
+ALTER TABLE Professores ADD FOREIGN KEY (id_departamento) REFERENCES Departamentos (id);
 
-ALTER TABLE Disciplinas ADD FOREIGN KEY (id_departamento) REFERENCES Departamento (id);
+ALTER TABLE Disciplinas ADD FOREIGN KEY (id_departamento) REFERENCES Departamentos (id);
 
-ALTER TABLE Turma ADD FOREIGN KEY (id_disciplina) REFERENCES Disciplinas (id);
+ALTER TABLE Turmas ADD FOREIGN KEY (id_disciplina) REFERENCES Disciplinas (id);
 
-ALTER TABLE Turma ADD FOREIGN KEY (id_professor) REFERENCES Professores (id);
+ALTER TABLE Turmas ADD FOREIGN KEY (id_professor) REFERENCES Professores (id);
 
-ALTER TABLE Avaliacoes ADD FOREIGN KEY (id_turma) REFERENCES Turma (id);
+ALTER TABLE Avaliacoes ADD FOREIGN KEY (id_turma) REFERENCES Turmas (id);
 
 ALTER TABLE Avaliacoes ADD FOREIGN KEY (id_estudante) REFERENCES Estudantes (id);
 
@@ -62,4 +62,4 @@ ALTER TABLE Denuncias ADD FOREIGN KEY (id_estudante) REFERENCES Estudantes (id);
 
 ALTER TABLE Denuncias ADD FOREIGN KEY (id_avaliacao) REFERENCES Avaliacoes (id);
 
-ALTER TABLE Turma ADD FOREIGN KEY (id_disciplina) REFERENCES Disciplinas (id);
+ALTER TABLE Turmas ADD FOREIGN KEY (id_disciplina) REFERENCES Disciplinas (id);

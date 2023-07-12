@@ -21,3 +21,9 @@ export const createDepartmentService = async (department: Department) => {
 export const deleteDepartmentService = async (id: string) => {
     return await deleteDepartment(id);
 }
+
+export const updateDepartment = async (department: Department) => {
+    await createDepartment(department);
+
+    return await fetchDepartmentById(department.id);
+}

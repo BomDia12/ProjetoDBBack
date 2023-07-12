@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createDepartmentService, deleteDepartmentService, fetchAllDepartments, fetchDepartmentById } from "./service";
+import { createDepartmentService, deleteDepartmentService, fetchAllDepartments, fetchDepartmentById, updateDepartment } from "./service";
 import { Department } from "src/utils/models";
 
 export const getAllDepartments = (req: Request, res: Response) => {
@@ -37,4 +37,15 @@ export const deleteDepartmentRequest = (req: Request, res: Response) => {
     }).catch(() => {
         res.status(404).send();
     });
-}
+};
+
+export const putDepartment = (req: Request, res: Response) => {
+    const body = req.body as Department;
+
+    updateDepartment(body).then((data) => {
+        res.status(200).send(data);
+    }).catch(() => {
+        res.status(404).send();
+    });
+};
+

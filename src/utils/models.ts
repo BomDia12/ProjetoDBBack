@@ -24,3 +24,10 @@ export interface Subject {
     id_departamento?: string;
     codigo?: string;
 }
+
+export interface Class {
+    id?: string;
+    id_professor?: string;
+    id_disciplina?: string;
+    codigo?: string;
+}

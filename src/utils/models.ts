@@ -17,3 +17,10 @@ export interface Teacher {
     nome?: string;
     id_departamento?: string;
 }
+
+export interface Subject {
+    id?: string;
+    nome?: string;
+    id_departamento?: string;
+    codigo?: string;
+}

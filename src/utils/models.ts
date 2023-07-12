@@ -39,3 +39,9 @@ export interface Review {
     nota: number;
     descricao: string;
 }
+
+export interface Report {
+    id?: string;
+    id_avaliacao?: string;
+    id_estudante?: string;
+}

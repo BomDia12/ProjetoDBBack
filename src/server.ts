@@ -5,6 +5,7 @@ import { createTeacherRequest, deleteTeacherRequest, getAllTeachers, getAllTeach
 import { createSubjectRequest, deleteSubjectRequest, getAllSubjects, getSubjectById, putSubject } from './subjects/controller';
 import { createClassRequest, deleteClassRequest, getAllClasses, getClassById, putClass } from './classes/controller';
 import { createReviewRequest, deleteReviewRequest, getAllReviews, getReviewById, putReview } from './reviews/controller';
+import { createReportRequest, deleteReportRequest, getAllReports, getReportById } from './reports/controller';
 require('dotenv').config();
 
 const app = express();
@@ -53,6 +54,12 @@ app.get('/reviews/:id', getReviewById);
 app.post('/reviews', createReviewRequest);
 app.delete('/reviews/:id', deleteReviewRequest);
 app.put('/reviews', putReview);
+
+// Reports CRUD
+app.get('/reports', getAllReports);
+app.get('/reports/:id', getReportById);
+app.post('/reports', createReportRequest);
+app.delete('/reports/:id', deleteReportRequest);
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`Application started on port ${process.env.SERVER_PORT}!`);

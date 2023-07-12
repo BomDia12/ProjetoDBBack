@@ -31,3 +31,11 @@ export interface Class {
     id_disciplina?: string;
     codigo?: string;
 }
+
+export interface Review {
+    id?: string;
+    id_estudante?: string;
+    id_turma?: string;
+    nota: number;
+    descricao: string;
+}

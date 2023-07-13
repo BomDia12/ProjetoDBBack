@@ -6,3 +6,6 @@ psql projetodb < ./sql/schema.sql
 
 # populando o banco
 psql projetodb < ./sql/seed.sql
+
+# Criando views
+psql projetodb < ./sql/view.sql

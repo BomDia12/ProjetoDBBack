@@ -44,7 +44,8 @@ export const putDepartment = (req: Request, res: Response) => {
 
     updateDepartment(body).then((data) => {
         res.status(200).send(data);
-    }).catch(() => {
+    }).catch((e) => {
+        console.log(e)
         res.status(404).send();
     });
 };

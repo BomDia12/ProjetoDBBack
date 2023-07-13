@@ -1,5 +1,5 @@
 import { Department } from "src/utils/models"
-import { createDepartment, deleteDepartment, fetchAllDepartmentsData, fetchDepartmentDataById } from "./repository"
+import { createDepartment, deleteDepartment, fetchAllDepartmentsData, fetchDepartmentDataById, updateDepartmentData } from "./repository"
 import { v4 as uuid} from 'uuid';
 
 export const fetchAllDepartments = async () => {
@@ -23,7 +23,7 @@ export const deleteDepartmentService = async (id: string) => {
 }
 
 export const updateDepartment = async (department: Department) => {
-    await createDepartment(department);
+    await updateDepartmentData(department);
 
     return await fetchDepartmentById(department.id);
 }

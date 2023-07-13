@@ -9,7 +9,9 @@ import { createReportRequest, deleteReportRequest, getAllReports, getReportById 
 require('dotenv').config();
 
 const app = express();
+const cors = require('cors');
 app.use(express.json()) // for parsing application/json
+app.use(cors());
 
 
 // Student CRUD

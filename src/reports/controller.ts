@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createReportService, deleteReportService, fetchAllReports, fetchReportById, updateReport } from "./service";
+import { createReportService, deleteReportService, fetchAllReports, fetchReportById } from "./service";
 import { Report } from "src/utils/models";
 
 export const getAllReports = (req: Request, res: Response) => {
@@ -38,14 +38,3 @@ export const deleteReportRequest = (req: Request, res: Response) => {
         res.status(404).send();
     });
 };
-
-export const putReport = (req: Request, res: Response) => {
-    const body = req.body as Report;
-
-    updateReport(body).then((data) => {
-        res.status(200).send(data);
-    }).catch(() => {
-        res.status(404).send();
-    });
-};
-

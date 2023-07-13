@@ -1,5 +1,5 @@
 import { Class } from "src/utils/models"
-import { createClass, deleteClass, fetchAllClassesData, fetchClassDataById } from "./repository"
+import { createClass, deleteClass, fetchAllClassesData, fetchClassDataById, updateClassData } from "./repository"
 import { v4 as uuid} from 'uuid';
 
 export const fetchAllClasses = async () => {
@@ -23,7 +23,7 @@ export const deleteClassService = async (id: string) => {
 }
 
 export const updateClass = async (department: Class) => {
-    await createClass(department);
+    await updateClassData(department);
 
     return await fetchClassById(department.id);
 }

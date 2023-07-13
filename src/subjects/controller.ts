@@ -44,8 +44,8 @@ export const putSubject = (req: Request, res: Response) => {
 
     updateSubject(body).then((data) => {
         res.status(200).send(data);
-    }).catch(() => {
-        res.status(404).send();
+    }).catch((e) => {
+        res.status(404).send(e);
     });
 };
 

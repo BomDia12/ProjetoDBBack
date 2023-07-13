@@ -28,10 +28,12 @@ export const getTeacherById = (req: Request, res: Response) => {
 
 export const createTeacherRequest = (req: Request, res: Response) => {
     const body = req.body as Teacher;
+    console.log(body)
 
     createTeacher(body).then((data) => {
         res.status(200).send(data);
-    }).catch(() => {
+    }).catch((e) => {
+        console.log(e)
         res.status(400).send();
     });
 }
@@ -52,8 +54,9 @@ export const putTeacher = (req: Request, res: Response) => {
 
     updateTeacher(body).then((data) => {
         res.status(200).send(data);
-    }).catch(() => {
-        res.status(404).send();
+    }).catch((e) => {
+        console.log(e)
+        res.status(404).send(e);
     });
 };
 

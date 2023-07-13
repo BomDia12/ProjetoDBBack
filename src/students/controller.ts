@@ -57,7 +57,8 @@ export const putStudent = (req: Request, res: Response) => {
 
     updateStudent(body).then(data => {
         res.status(200).send(data);
-    }).catch(() => {
+    }).catch((e) => {
+        console.log(e)
         res.status(404).send();
     });
 }

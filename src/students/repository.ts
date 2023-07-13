@@ -26,8 +26,8 @@ export const deleteStudentData = async (id: string) => {
 
 export const updateStudentData = async (student: Student) => {
     const data = await client.query(
-        'UPDATE Estudantes SET email=$2, nome=$3, senha=$4, curso=$5 WHERE id=$1',
-        [student.id, student.email, student.nome, student.senha, student.curso]
+        'UPDATE Estudantes SET email=$2, nome=$3, curso=$4 WHERE id=$1',
+        [student.id, student.email, student.nome, student.curso]
     );
     return data;
 }

@@ -1,5 +1,5 @@
 import { Review } from "src/utils/models"
-import { createReview, deleteReview, fetchAllReviewsData, fetchReviewDataById } from "./repository"
+import { createReview, deleteReview, fetchAllReviewsData, fetchReviewDataById, updateReviewData } from "./repository"
 import { v4 as uuid } from 'uuid';
 
 export const fetchAllReviews = async () => {
@@ -23,7 +23,7 @@ export const deleteReviewService = async (id: string) => {
 }
 
 export const updateReview = async (review: Review) => {
-    await createReview(review);
+    await updateReviewData(review);
 
     return await fetchReviewById(review.id);
 }

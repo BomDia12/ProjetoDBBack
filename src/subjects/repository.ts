@@ -26,7 +26,7 @@ export const deleteSubject = async (id: string) => {
 
 export const updateSubjectData = async (subject: Subject) => {
     const data = await client.query(
-        'UPDATE Disciplinas SET nome=$2 codigo=$3 WHERE id=$1',
+        'UPDATE Disciplinas SET nome=$2, codigo=$3 WHERE id=$1',
         [subject.id, subject.nome, subject.codigo]
     );
     return data;

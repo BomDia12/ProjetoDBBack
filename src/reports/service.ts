@@ -21,9 +21,3 @@ export const createReportService = async (report: Report) => {
 export const deleteReportService = async (id: string) => {
     return await deleteReport(id);
 }
-
-export const updateReport = async (report: Report) => {
-    await createReport(report);
-
-    return await fetchReportById(report.id);
-}

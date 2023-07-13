@@ -1,5 +1,5 @@
 import { Subject } from "src/utils/models"
-import { createSubject, deleteSubject, fetchAllSubjectsData, fetchSubjectDataById } from "./repository"
+import { createSubject, deleteSubject, fetchAllSubjectsData, fetchSubjectDataById, updateSubjectData } from "./repository"
 import { v4 as uuid } from 'uuid';
 
 export const fetchAllSubjects = async () => {
@@ -23,7 +23,7 @@ export const deleteSubjectService = async (id: string) => {
 }
 
 export const updateSubject = async (subject: Subject) => {
-    await createSubject(subject);
+    await updateSubjectData(subject);
 
     return await fetchSubjectById(subject.id);
 }

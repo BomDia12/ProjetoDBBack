@@ -29,7 +29,7 @@ export const createTeacherData = async (teacher: Teacher) => {
 
 export const updateTeacherData = async (teacher: Teacher) => {
     const data = await client.query(
-        'UPDATE Professores SET email=$2 nome=$3 WHERE id=$1',
+        'UPDATE Professores SET email=$2, nome=$3 WHERE id=$1',
         [teacher.id, teacher.email, teacher.nome]
     );
     return data;

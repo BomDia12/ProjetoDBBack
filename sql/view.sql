@@ -5,7 +5,7 @@ WHERE A.id_turma = T.id
 GROUP BY T.codigo, T.id;
 
 CREATE VIEW NotasProfessores AS 
-SELECT P.id, P.nome, AVG(A.nota)
+SELECT P.id, P.nome, AVG(A.nota) as nota
 FROM Turmas as T, Avaliacoes as A, Professores as P
 WHERE A.id_turma = T.id AND P.id = T.id_professor
 GROUP BY P.id, P.nome;

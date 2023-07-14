@@ -31,3 +31,10 @@ export const updateReviewData = async (review: Review) => {
     );
     return data;
 };
+
+
+export const fetchReviewDataByTeacher = async (id: string) => {
+    const data = await client.query('CALL fetch_teacher_reviews($1)', [id]);
+
+    return data.rows;
+}

@@ -99,3 +99,27 @@ INSERT INTO Turmas VALUES (
   'ddcb1260-1a97-4e07-b7b4-b08f41a84473',
   'T03'
 );
+
+INSERT INTO Avaliacoes VALUES (
+  'd496dc9e-9fce-4458-b19b-1a64608bd770',
+  '8083e969-ff18-48e2-a0cc-2820b44ac0ad',
+  'a4248ed4-5387-476f-bfd6-261a415089e7',
+  10,
+  'Bom dia'
+);
+
+INSERT INTO Avaliacoes VALUES (
+  'b7fe38bb-87a6-4acf-ade7-b3f329f78901',
+  '8083e969-ff18-48e2-a0cc-2820b44ac0ad',
+  'a4248ed4-5387-476f-bfd6-261a415089e7',
+  8,
+  'Bom dia'
+);
+
+INSERT INTO Avaliacoes VALUES (
+  '8d5e4be0-2a2d-4c50-9c72-1d445b9ec93e',
+  '8083e969-ff18-48e2-a0cc-2820b44ac0ad',
+  'a4248ed4-5387-476f-bfd6-261a415089e7',
+  7,
+  'Bom dia'
+);

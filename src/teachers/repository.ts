@@ -39,3 +39,8 @@ export const deleteTeacherData = async (id: string) => {
     const data = await client.query('DELETE Professores WHERE id=$1', [id]);
     return data;
 }
+
+export const getTeachGrande = async(id: string) => {
+    const data = await client.query('SELECT nota FROM NotasProfessores WHERE id=$1', [id]);
+    return data.rows[0];
+}

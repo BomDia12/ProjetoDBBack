@@ -4,7 +4,7 @@ import { createDepartmentRequest, deleteDepartmentRequest, getAllDepartments, ge
 import { createTeacherRequest, deleteTeacherRequest, getAllTeachers, getAllTeachersByDepartment, getTeacherById, putTeacher } from './teachers/controller';
 import { createSubjectRequest, deleteSubjectRequest, getAllSubjects, getSubjectById, putSubject } from './subjects/controller';
 import { createClassRequest, deleteClassRequest, getAllClasses, getClassById, putClass } from './classes/controller';
-import { createReviewRequest, deleteReviewRequest, getAllReviews, getReviewById, putReview } from './reviews/controller';
+import { createReviewRequest, deleteReviewRequest, getAllReviews, getReviewById, getReviewsByTeacher, putReview } from './reviews/controller';
 import { createReportRequest, deleteReportRequest, getAllReports, getReportById } from './reports/controller';
 require('dotenv').config();
 
@@ -35,6 +35,7 @@ app.get('/teachers/:id', getTeacherById);
 app.post('/teachers', createTeacherRequest);
 app.delete('/teachers/:id', deleteTeacherRequest);
 app.put('/teachers', putTeacher);
+app.get('/teachers/:id/reviews', getReviewsByTeacher);
 
 // Subject CRUD
 app.get('/subjects', getAllSubjects);

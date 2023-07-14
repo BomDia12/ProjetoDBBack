@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { createReviewService, deleteReviewService, fetchAllReviews, fetchReviewById, updateReview } from "./service";
 import { Review } from "src/utils/models";
+import { fetchReviewDataByTeacher } from "./repository";
 
 export const getAllReviews = (req: Request, res: Response) => {
     fetchAllReviews().then((data) => {
@@ -49,3 +50,12 @@ export const putReview = (req: Request, res: Response) => {
     });
 };
 
+export const getReviewsByTeacher = (req: Request, res: Response) => {
+    const id = req.params.id as string;
+
+    fetchReviewDataByTeacher(id).then((data) => {
+        res.status(200).send(data);
+    }).catch((e) => {
+        res.status(404).send(e);
+    });
+}

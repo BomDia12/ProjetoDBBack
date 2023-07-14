@@ -16,6 +16,7 @@ export interface Teacher {
     email?: string;
     nome?: string;
     id_departamento?: string;
+    nota?: number;
 }
 
 export interface Subject {
@@ -44,4 +45,11 @@ export interface Report {
     id?: string;
     id_avaliacao?: string;
     id_estudante?: string;
+}
+
+export interface TeacherReviews {
+    id: string;
+    nome_professor?: string;
+    nota?: number;
+    descricao?: string;
 }

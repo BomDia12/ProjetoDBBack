@@ -1,5 +1,5 @@
 import { Teacher } from "src/utils/models"
-import { createTeacherData, deleteTeacherData, fetchAllTeachersData, fetchAllTeachersDataByDepartment, fetchTeacherDataById, updateTeacherData } from "./repository"
+import { createTeacherData, deleteTeacherData, fetchAllTeachersData, fetchAllTeachersDataByDepartment, fetchTeacherDataById, getTeachGrande, updateTeacherData } from "./repository"
 import { v4 as uuid } from "uuid";
 
 export const fetchAllTeachers = async () => {
@@ -11,7 +11,8 @@ export const fetchAllTeachersByDepartment = async (departmentId: string) => {
 }
 
 export const fetchTeacherById = async (id: string) => {
-    return await fetchTeacherDataById(id) as Teacher;
+    const data = await fetchTeacherDataById(id) as Teacher;
+    return { ...data, nota: (await getTeachGrande(id)).nota };
 }
 
 export const createTeacher = async (teacher: Teacher) => {

@@ -3,7 +3,8 @@ CREATE TABLE Estudantes (
   email varchar UNIQUE NOT NULL,
   nome varchar,
   senha varchar NOT NULL,
-  curso varchar
+  curso varchar,
+  is_admin boolean
 );
 
 CREATE TABLE Departamentos (

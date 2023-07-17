@@ -2,7 +2,7 @@ import { Class } from "src/utils/models";
 import client from "../../src/utils/database"
 
 export const fetchAllClassesData = async () => {
-    const data = await client.query('SELECT * FROM Turmas');
+    const data = await client.query('SELECT * FROM NotasTurmas');
     return data.rows;
 };
 

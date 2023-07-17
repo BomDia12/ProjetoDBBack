@@ -5,6 +5,8 @@ import { Class } from "src/utils/models";
 export const getAllClasses = (req: Request, res: Response) => {
     fetchAllClasses().then((data) => {
         res.status(200).send(data);
+    }).catch((e) => {
+        console.log(e)
     });
 };
 

@@ -4,6 +4,7 @@ export interface Student {
     nome?: string;
     senha?: string;
     curso?: string;
+    is_admin?: boolean
 }
 
 export interface Department {
@@ -31,6 +32,7 @@ export interface Class {
     id_professor?: string;
     id_disciplina?: string;
     codigo?: string;
+    nota?: number;
 }
 
 export interface Review {
@@ -51,5 +53,19 @@ export interface TeacherReviews {
     id: string;
     nome_professor?: string;
     nota?: number;
+    descricao?: string;
+}
+
+export interface ClassReviews {
+    id: string;
+    codigo?: string;
+    id_avaliacao?: string;
+    nota?: number;
+    descricao: string;
+}
+
+export interface ReportReview {
+    id?: string;
+    id_avaliacao?: string;
     descricao?: string;
 }

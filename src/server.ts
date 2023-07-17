@@ -1,11 +1,11 @@
 import express from 'express';
-import { deleteStudentRequest, getAllStudents, getStudentById, postCreateStudent, putStudent } from './students/controller';
+import { deleteStudentRequest, getAllStudents, getStudentById, login, postCreateStudent, putStudent } from './students/controller';
 import { createDepartmentRequest, deleteDepartmentRequest, getAllDepartments, getDepartmentById, putDepartment } from './departments/controller';
 import { createTeacherRequest, deleteTeacherRequest, getAllTeachers, getAllTeachersByDepartment, getTeacherById, putTeacher } from './teachers/controller';
 import { createSubjectRequest, deleteSubjectRequest, getAllSubjects, getSubjectById, putSubject } from './subjects/controller';
 import { createClassRequest, deleteClassRequest, getAllClasses, getClassById, putClass } from './classes/controller';
-import { createReviewRequest, deleteReviewRequest, getAllReviews, getReviewById, getReviewsByTeacher, putReview } from './reviews/controller';
-import { createReportRequest, deleteReportRequest, getAllReports, getReportById } from './reports/controller';
+import { createReviewRequest, deleteReviewRequest, getAllReviews, getClassReviews, getReviewById, getReviewsByTeacher, putReview } from './reviews/controller';
+import { createReportRequest, deleteReportRequest, getAllReports, getReportById, postAcceptReport } from './reports/controller';
 require('dotenv').config();
 
 const app = express();
@@ -63,6 +63,16 @@ app.get('/reports', getAllReports);
 app.get('/reports/:id', getReportById);
 app.post('/reports', createReportRequest);
 app.delete('/reports/:id', deleteReportRequest);
+app.get('/reports/:id/accept-report', postAcceptReport);
+
+// Classes CRUD
+app.get('/classes', getAllClasses);
+app.get('/classes/:id', getClassById);
+app.post('/classes', createClassRequest);
+app.delete('/classes/:id', deleteClassRequest);
+app.get('/classes/:id/reviews', getClassReviews);
+
+app.post('/login', login)
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`Application started on port ${process.env.SERVER_PORT}!`);

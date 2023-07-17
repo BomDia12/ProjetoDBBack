@@ -3,7 +3,8 @@ INSERT INTO Estudantes VALUES (
   '200014935@aluno.unb.br',
   'Arthur Mota Furtado',
   '123456',
-  'Curso'
+  'Curso',
+  true
 );
 
 INSERT INTO Estudantes VALUES (
@@ -105,7 +106,7 @@ INSERT INTO Avaliacoes VALUES (
   '8083e969-ff18-48e2-a0cc-2820b44ac0ad',
   'a4248ed4-5387-476f-bfd6-261a415089e7',
   10,
-  'Bom dia'
+  'Perfeito'
 );
 
 INSERT INTO Avaliacoes VALUES (
@@ -113,7 +114,7 @@ INSERT INTO Avaliacoes VALUES (
   '8083e969-ff18-48e2-a0cc-2820b44ac0ad',
   'a4248ed4-5387-476f-bfd6-261a415089e7',
   8,
-  'Bom dia'
+  'Muito bom'
 );
 
 INSERT INTO Avaliacoes VALUES (
@@ -121,5 +122,23 @@ INSERT INTO Avaliacoes VALUES (
   '8083e969-ff18-48e2-a0cc-2820b44ac0ad',
   'a4248ed4-5387-476f-bfd6-261a415089e7',
   7,
-  'Bom dia'
+  'Bom'
+);
+
+INSERT INTO Denuncias VALUES (
+  'aa16a0ef-4860-4220-b517-7c3f1c7ad55b',
+  'd496dc9e-9fce-4458-b19b-1a64608bd770',
+  '8083e969-ff18-48e2-a0cc-2820b44ac0ad'
+);
+
+INSERT INTO Denuncias VALUES (
+  '37125ace-a796-44e7-96be-d1467f465729',
+  'b7fe38bb-87a6-4acf-ade7-b3f329f78901',
+  '8083e969-ff18-48e2-a0cc-2820b44ac0ad'
+);
+
+INSERT INTO Denuncias VALUES (
+  'b9938d73-92be-4d4f-b174-46f4cf87b228',
+  '8d5e4be0-2a2d-4c50-9c72-1d445b9ec93e',
+  '8083e969-ff18-48e2-a0cc-2820b44ac0ad'
 );

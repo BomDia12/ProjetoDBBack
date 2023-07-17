@@ -27,3 +27,5 @@
 Caso você tenha problemas na parte de criar o banco de dados, tente criar um usuário do postgres com o mesmo nome de usuário como superuser (confira isso pelo comando `whoami`). Isso pode ser feito por meio do comando `createuser --interative` sendo rodado pelo root ou pelo usuário postgres.
 
 Este projeto não foi testado no Windows, mas funciona em sistemas UNIX.
+
+Caso após rodar os comandos de criar o banco de dados, o comando não termine, apertar `ctrl + C` fecha o programa, e mantêm as entidades criadas no banco de dados.

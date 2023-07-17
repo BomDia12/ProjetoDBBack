@@ -1,5 +1,5 @@
 import { Report } from "src/utils/models"
-import { createReport, deleteReport, fetchAllReportsData, fetchReportDataById } from "./repository"
+import { acceptReport, createReport, deleteReport, fetchAllReportsData, fetchReportDataById } from "./repository"
 import { v4 as uuid } from 'uuid';
 
 export const fetchAllReports = async () => {
@@ -20,4 +20,8 @@ export const createReportService = async (report: Report) => {
 
 export const deleteReportService = async (id: string) => {
     return await deleteReport(id);
+}
+
+export const acceptReportService = async (reviewId: string) => {
+    return await acceptReport(reviewId)
 }

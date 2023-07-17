@@ -31,3 +31,7 @@ export const updateStudentData = async (student: Student) => {
     );
     return data;
 }
+
+export const fetchStudentByEmail = async (email: string) => {
+    return (await client.query('SELECT * FROM Estudantes WHERE email = $1', [email])).rows[0];
+}

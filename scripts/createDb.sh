@@ -12,3 +12,6 @@ psql projetodb < ./sql/view.sql
 
 # Criando procedure
 psql projetodb < ./sql/procedure.sql
+
+# Criando funções
+psql projetodb < ./sql/functions.sql

@@ -12,7 +12,7 @@ export const fetchAllTeachersByDepartment = async (departmentId: string) => {
 
 export const fetchTeacherById = async (id: string) => {
     const data = await fetchTeacherDataById(id) as Teacher;
-    return { ...data, nota: (await getTeachGrande(id)).nota };
+    return { ...data, nota: (await getTeachGrande(id))?.nota };
 }
 
 export const createTeacher = async (teacher: Teacher) => {

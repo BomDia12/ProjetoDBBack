@@ -21,8 +21,9 @@ export const getTeacherById = (req: Request, res: Response) => {
 
     fetchTeacherById(id).then((data) => {
         res.status(200).send(data);
-    }).catch(() => {
-        res.status(404).send();
+    }).catch((e) => {
+        console.log(e)
+        res.status(404).send(e);
     });
 };
 

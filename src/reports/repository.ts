@@ -2,7 +2,7 @@ import { Report } from "src/utils/models";
 import client from "../utils/database"
 
 export const fetchAllReportsData = async () => {
-    const data = await client.query('SELECT * FROM Denuncias');
+    const data = await client.query('SELECT * FROM DeunciasAvalicoes');
     return data.rows;
 };
 
@@ -22,4 +22,8 @@ export const createReport = async (report: Report) => {
 export const deleteReport = async (id: string) => {
     const data = await client.query('DELETE FROM Denuncias WHERE id = $1', [id]);
     return data;
+};
+
+export const acceptReport = async (id: string) => {
+    return await client.query('CALL accept_report($1)', [id])
 };

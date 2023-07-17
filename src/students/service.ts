@@ -1,5 +1,5 @@
 import { Student } from "src/utils/models";
-import { createStudent, deleteStudentData, fetchAllStudentsData, fetchStudentDataById, updateStudentData } from "./repository"
+import { createStudent, deleteStudentData, fetchAllStudentsData, fetchStudentByEmail, fetchStudentDataById, updateStudentData } from "./repository"
 import { v4 as uuid } from "uuid";
 
 export const fetchAllStudents = async () => {
@@ -27,4 +27,14 @@ export const updateStudent = async (student: Student) => {
     await updateStudentData(student);
 
     return await fetchStudentById(student.id);
+}
+
+export const performLogin = async (email: string, password: string) => {
+    const user = await fetchStudentByEmail(email) as Student;
+
+    if (user?.senha !== password) {
+        throw 'wrong login'
+    }
+
+    return user;
 }

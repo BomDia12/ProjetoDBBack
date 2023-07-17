@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { createStudentService, deleteStudentService, fetchAllStudents, fetchStudentById, updateStudent } from "./service"
+import { createStudentService, deleteStudentService, fetchAllStudents, fetchStudentById, performLogin, updateStudent } from "./service"
 import { Student } from "src/utils/models";
 
 export const getAllStudents = (req: Request, res: Response) => {
@@ -61,4 +61,16 @@ export const putStudent = (req: Request, res: Response) => {
         console.log(e)
         res.status(404).send();
     });
+}
+
+export const login = (req: Request, res: Response) => {
+    const email = req.body.email as string;
+    const password = req.body.password as string;
+
+    performLogin(email, password).then(data => {
+        res.status(200).send(data)
+    }).catch(e => {
+        console.log(e)
+        res.status(401).send(e)
+    })
 }
